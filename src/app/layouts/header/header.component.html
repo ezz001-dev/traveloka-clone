@@ -1,1 +1,48 @@
-<p>header works!</p>
+<header
+  [class.bg-white]="isScrolled"
+  [class.bg-transparent]="!isScrolled"
+  [class.shadow-md]="isScrolled"
+  class="fixed top-0 left-0 w-full transition-all duration-300 z-50"
+>
+  <div class="container mx-auto flex flex-col px-6 py-4">
+
+    <div class="flex items-center justify-between mb-4">
+      <div class="logo">
+        <!-- <img src="https://d1nabgopwop1kh.cloudfront.net/traveloka/icon_114.png" alt="Logo" class="h-8" /> -->
+         <h2 class="text-2xl">
+          Traveloka
+         </h2>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <nav class="hidden md:flex space-x-6 text-sm text-gray-700">
+          <a href="#" class="hover:underline">Promo</a>
+          <a href="#" class="hover:underline">Bantuan</a>
+          <a href="#" class="hover:underline">Jadi Mitra</a>
+          <a href="#" class="hover:underline">For Corporates</a>
+          <a href="#" class="hover:underline">Pesanan</a>
+        </nav>
+
+
+        <div class="flex items-center space-x-4">
+          <button class="text-sm border border-solid border-neutral-300 rounded px-4 py-2">Log In</button>
+          <button class="bg-blue-500 text-white px-4 py-2 rounded">Daftar</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="space-x-4">
+      <nav class="hidden md:flex space-x-6 text-sm text-gray-700 flex items-center ">
+        <a href="#" class=" flex-auto text-gray-700 font-bold hover:underline">Hotel</a>
+        <a href="#" class=" flex-auto text-gray-700 font-bold hover:underline">Tiket Pesawat</a>
+        <a href="#" class=" flex-auto text-gray-700 font-bold hover:underline">Tiket Kereta Api</a>
+        <a href="#" class=" flex-auto text-gray-700 font-bold hover:underline">Antar Jemput Bandara</a>
+        <a href="#" class=" flex-auto text-gray-700 font-bold hover:underline">Rental Mobil</a>
+        <a href="#" class=" flex-auto text-gray-700 font-bold hover:underline">Atraksi dan Aktifitas</a>
+        <a href="#" class=" flex-auto text-gray-700 font-bold hover:underline">Produk Lainnya</a>
+      </nav>
+    </div>
+  </div>
+</header>
