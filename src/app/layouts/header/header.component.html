@@ -9,23 +9,32 @@
     <div class="flex items-center justify-between mb-4">
       <div class="logo">
         <!-- <img src="https://d1nabgopwop1kh.cloudfront.net/traveloka/icon_114.png" alt="Logo" class="h-8" /> -->
-         <h2 class="text-2xl">
+         <h2
+         [class.text-white]="!isScrolled"
+          [class.text-gray]="isScrolled"
+          class="text-2xl text-white" >
           Traveloka
          </h2>
       </div>
 
       <div class="flex items-center gap-4">
-        <nav class="hidden md:flex space-x-6 text-sm text-gray-700">
-          <a href="#" class="hover:underline">Promo</a>
-          <a href="#" class="hover:underline">Bantuan</a>
-          <a href="#" class="hover:underline">Jadi Mitra</a>
-          <a href="#" class="hover:underline">For Corporates</a>
-          <a href="#" class="hover:underline">Pesanan</a>
+        <nav
+          [class.text-white]="!isScrolled"
+          [class.text-gray]="isScrolled"
+          class="hidden md:flex space-x-6 text-sm" aria-label="Menu utama">
+          <a href="#" class="font-bold hover:underline">Promo</a>
+          <a href="#" class="font-bold hover:underline">Bantuan</a>
+          <a href="#" class="font-bold hover:underline">Jadi Mitra</a>
+          <a href="#" class="font-bold hover:underline">For Corporates</a>
+          <a href="#" class="font-bold hover:underline">Pesanan</a>
         </nav>
 
 
         <div class="flex items-center space-x-4">
-          <button class="text-sm border border-solid border-neutral-300 rounded px-4 py-2">Log In</button>
+          <button
+              [class.text-white]="!isScrolled"
+              [class.text-gray]="isScrolled"
+              class="text-sm border border-solid border-neutral-300 rounded px-4 py-2">Log In</button>
           <button class="bg-blue-500 text-white px-4 py-2 rounded">Daftar</button>
         </div>
       </div>
@@ -34,14 +43,18 @@
 
 
     <div class="space-x-4">
-      <nav class="hidden md:flex space-x-6 text-sm text-gray-700 flex items-center ">
-        <a href="#" class=" flex-auto text-gray-700 font-bold hover:underline">Hotel</a>
-        <a href="#" class=" flex-auto text-gray-700 font-bold hover:underline">Tiket Pesawat</a>
-        <a href="#" class=" flex-auto text-gray-700 font-bold hover:underline">Tiket Kereta Api</a>
-        <a href="#" class=" flex-auto text-gray-700 font-bold hover:underline">Antar Jemput Bandara</a>
-        <a href="#" class=" flex-auto text-gray-700 font-bold hover:underline">Rental Mobil</a>
-        <a href="#" class=" flex-auto text-gray-700 font-bold hover:underline">Atraksi dan Aktifitas</a>
-        <a href="#" class=" flex-auto text-gray-700 font-bold hover:underline">Produk Lainnya</a>
+      <nav
+        [class.text-white]="!isScrolled"
+        [class.text-gray]="isScrolled"
+        class="hidden md:flex space-x-6 text-sm flex items-center"
+        aria-label="Menu produk">
+        <a href="#" class=" flex-auto font-bold hover:underline">Hotel</a>
+        <a href="#" class=" flex-auto font-bold hover:underline">Tiket Pesawat</a>
+        <a href="#" class=" flex-auto font-bold hover:underline">Tiket Kereta Api</a>
+        <a href="#" class=" flex-auto font-bold hover:underline">Antar Jemput Bandara</a>
+        <a href="#" class=" flex-auto font-bold hover:underline">Rental Mobil</a>
+        <a href="#" class=" flex-auto font-bold hover:underline">Atraksi dan Aktifitas</a>
+        <a href="#" class=" flex-auto font-bold hover:underline">Produk Lainnya</a>
       </nav>
     </div>
   </div>
