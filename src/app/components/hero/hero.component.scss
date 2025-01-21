@@ -13,7 +13,7 @@
     height: 30px;
     width: 30px;
     display: block;
-    margin: auto;
+    // margin: auto;
 
     img {
       height: 100%;
@@ -32,5 +32,43 @@
         background-color: rgba(255, 255, 255, 0.25);
       }
     }
+  }
+
+  .btn-search {
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .wrapper-form {
+
+    input {
+      outline: none;
+      color: black;
+    }
+
+    .input-1 {
+      border: 2px solid gray;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+    .input-2 {
+      border-top: 2px solid gray;
+      border-bottom: 2px solid gray;
+    }
+    .input-3 {
+      border: 2px solid gray;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      overflow: hidden;
+
+    }
+  }
+
+  .mh-80 {
+    min-height: 80px;
   }
 }

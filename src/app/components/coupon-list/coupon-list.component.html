@@ -1,0 +1,26 @@
+<div class="p-6 shadow-md coupon-comp">
+
+  <div class="container mx-auto">
+    <h2 class="text-xl font-bold mb-4">Daftar untuk Menggunakan Kupon</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div *ngFor="let coupon of coupons" class="bg-white  rounded-lg shadow flex flex-col relative">
+        <div class="flex items-center p-4 mb-2">
+          <img src="img/logo-coupon.webp" alt="Logo" class="mr-2" />
+          <span class="font-semibold text-lg">{{ coupon.description }}</span>
+        </div>
+        <p class="text-gray-600 text-sm px-4 mb-2">{{ coupon.discount }}</p>
+
+        <div class="flex flex-col">
+          <div class="bg-coupon-item">
+            <div class="border border-dashed w-full"></div>
+          </div>
+          <div class="flex px-4 pb-4 justify-between items-center mt-auto gap-4">
+            <span class="text-gray-500 font-semibold bg-gray-100 rounded p-1 pl-2 flex-auto">{{ coupon.code }}</span>
+            <button (click)="copyToClipboard(coupon.code)" class="bg-blue-500 text-white px-4 py-1 rounded-md custom-rounded">Copy</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

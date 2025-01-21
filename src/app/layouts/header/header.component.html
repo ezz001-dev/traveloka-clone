@@ -21,11 +21,9 @@
           [class.text-white]="!isScrolled"
           [class.text-gray]="isScrolled"
           class="hidden md:flex space-x-6 text-sm" aria-label="Menu utama">
-          <a href="#" class="font-bold hover:underline">Promo</a>
-          <a href="#" class="font-bold hover:underline">Bantuan</a>
-          <a href="#" class="font-bold hover:underline">Jadi Mitra</a>
-          <a href="#" class="font-bold hover:underline">For Corporates</a>
-          <a href="#" class="font-bold hover:underline">Pesanan</a>
+          @for (item of topMenu; track $index) {
+            <a href="#" class="font-bold hover:bg-black hover:bg-opacity-50 py-2 px-2 rounded">{{ item.label }}</a>
+          }
         </nav>
 
 
@@ -42,18 +40,17 @@
 
 
     <div class="space-x-4 header-bottom">
+      <div class="absolute w-full line"></div>
       <nav
         [class.text-white]="!isScrolled"
         [class.text-gray]="isScrolled"
         class="hidden md:flex space-x-6 text-sm flex items-center"
         aria-label="Menu produk">
-        <a href="#" class=" flex-auto font-bold hover:underline">Hotel</a>
-        <a href="#" class=" flex-auto font-bold hover:underline">Tiket Pesawat</a>
-        <a href="#" class=" flex-auto font-bold hover:underline">Tiket Kereta Api</a>
-        <a href="#" class=" flex-auto font-bold hover:underline">Antar Jemput Bandara</a>
-        <a href="#" class=" flex-auto font-bold hover:underline">Rental Mobil</a>
-        <a href="#" class=" flex-auto font-bold hover:underline">Atraksi dan Aktifitas</a>
-        <a href="#" class=" flex-auto font-bold hover:underline">Produk Lainnya</a>
+        @for (item of bottomMenu; track $index) {
+          <span class="flex-auto">
+            <a href="#" class="py-2 px-2 font-bold hover:bg-black hover:bg-opacity-50 rounded">{{ item.label }}</a>
+          </span>
+        }
       </nav>
     </div>
   </div>

@@ -2,72 +2,37 @@
   <div class="relative from-blue-900 to-transparent pt-10">
     <div class="container mx-auto px-6 py-12 text-white flex flex-col">
       <h1 class="text-3xl font-bold mx-auto hero-title">Wujudkan Perjalananmu dengan Caramu</h1>
-      <div class="bg-transparent shadow-lg rounded-lg mt-6 p-6 text-white box-border">
+      <div class="bg-transparent rounded-lg mt-6 p-6 text-white box-border">
         <div class="flex items-center justify-between space-x-4 border-b-2 border-solid pb-8 box-border text-gray-300">
-          <button class="py-2 px-4 rounded-3xl bg-white text-black flex flex-col justify-center gap-2 ">
-            <span class="icon">
-              <img src="icon/plane.png" alt="">
-            </span>
-            <span class="font-bold">
-              Tiket Pesawat
-            </span>
-          </button>
-          <button class="py-2 px-4 rounded-3xl hover:border hover:border-solid flex flex-col justify-center gap-2">
+
+          @for (item of menuItems; track $index) {
+
+            <button class="rounded-3xl text-black flex flex-col justify-center align-center gap-2 plr16 plb8 h-full mh-80"
+            [ngClass]="{
+              'bg-white': item.isActive,
+              'text-black': item.isActive,
+              'hover:border' : !item.isActive,
+              'hover:border-solid' : !item.isActive,
+            }">
+              <span class="icon">
+                <img [src]="item.path" [alt]="item.label">
+              </span>
+              <span class="font-bold">
+                {{ item.label }}
+              </span>
+            </button>
+
+          }
+
+          <!-- <button class="py-2 px-4 rounded-3xl hover:border hover:border-solid flex flex-col justify-center gap-2">
             <span class="icon">
               <img src="icon/train.png" alt="">
             </span>
             <span class="font-bold">
               Tiket Kereta Api
             </span>
-          </button>
-          <button class="py-2 px-4 rounded-3xl hover:border hover:border-solid flex flex-col justify-center gap-2">
-            <span class="icon">
-              <img src="icon/train.png" alt="">
-            </span>
-            <span class="font-bold">
-              Tiket Bus
-            </span>
-          </button>
-          <button class="py-2 px-4 rounded-3xl hover:border hover:border-solid flex flex-col justify-center gap-2">
-            <span class="icon">
-              <img src="icon/car.png" alt="">
-            </span>
-            <span class="font-bold">
-              Rental Mobil
-            </span>
-          </button>
-          <button class="py-2 px-4 rounded-3xl hover:border hover:border-solid flex flex-col justify-center gap-2">
-            <span class="icon">
-              <img src="icon/car.png" alt="">
-            </span>
-            <span class="font-bold">
-              Rental Mobil
-            </span>
-          </button>
-          <button class="py-2 px-4 rounded-3xl hover:border hover:border-solid flex flex-col justify-center gap-2">
-            <span class="icon">
-              <img src="icon/car.png" alt="">
-            </span>
-            <span class="font-bold">
-              Rental Mobil
-            </span>
-          </button>
-          <button class="py-2 px-4 rounded-3xl hover:border hover:border-solid flex flex-col justify-center gap-2">
-            <span class="icon">
-              <img src="icon/car.png" alt="">
-            </span>
-            <span class="font-bold">
-              Rental Mobil
-            </span>
-          </button>
-          <button class="py-2 px-4 rounded-3xl hover:border hover:border-solid flex flex-col justify-center gap-2">
-            <span class="icon">
-              <img src="icon/car.png" alt="">
-            </span>
-            <span class="font-bold">
-              Lainnya
-            </span>
-          </button>
+          </button> -->
+
 
 
         </div>
@@ -99,51 +64,32 @@
 
 
 
-        <div class="flex justify-between gap-4">
+        <div class="flex justify-between gap-4 ">
 
-          <div class="mt-6 grid grid-cols-1 md:grid-cols-2 mr-2 flex-auto">
+          <div class="mt-6 grid grid-cols-1 md:grid-cols-3 mr-2 flex-auto wrapper-form">
             <div>
-              <label class="block text-sm">Dari</label>
-              <input type="text" placeholder="Medan (KNO)" class="w-full p-2 border " />
+              <label class="block text-sm font-semibold mb-2">Kota, tujuan, atau nama hotel</label>
+              <input type="text" placeholder="Medan (KNO)" class="w-full p-2 border input-1" />
             </div>
             <div>
-              <label class="block text-sm">Ke</label>
-              <input type="text" placeholder="Surabaya (SUB)" class="w-full p-2 border " />
+              <label class="block text-sm font-semibold mb-2">Tanggal Check-in & Check-out</label>
+              <input type="text" placeholder="Surabaya (SUB)" class="w-full p-2 border input-2" />
+            </div>
+            <div >
+              <label class="block text-sm font-semibold mb-2">Tamu dan Kamar</label>
+              <div class="wrapper-input relative">
+                <input type="text" placeholder="Surabaya (SUB)" class="w-full p-2 border input-3" />
+                <button class="absolute bg-orange-500 text-white btn-search">Cari</button>
+
+              </div>
             </div>
           </div>
 
-          <div class="mt-6 grid grid-cols-1 md:grid-cols-2 mr-2 flex-auto">
-            <div>
-              <label class="block text-sm">Dari</label>
-              <input type="text" placeholder="Medan (KNO)" class="w-full p-2 border " />
-            </div>
-            <div>
-              <label class="block text-sm">Ke</label>
-              <input type="text" placeholder="Surabaya (SUB)" class="w-full p-2 border " />
-            </div>
-          </div>
-
-          <div class="mt-6 grid grid-cols-1 md:grid-cols-1 mr-2 ">
-            <div class="flex items-end">
-              <!-- <label for="block text-sm">ss</label> -->
-              <button class=" py-2 px-6 bg-orange-500 text-white rounded p-2 w-full">Cari</button>
-            </div>
-          </div>
 
         </div>
 
 
-        <div class="mt-6 flex justify-between items-center">
-          <!-- <button class="py-2 px-4 bg-orange-500 text-white rounded">Cari</button> -->
-          <div class="flex items-center space-x-2 text-sm">
-            <label>
-              <input type="checkbox" class="mr-2" /> Sekali Jalan
-            </label>
-            <label>
-              <input type="checkbox" class="mr-2" /> Pulang Pergi
-            </label>
-          </div>
-        </div>
+
       </div>
     </div>
   </div>

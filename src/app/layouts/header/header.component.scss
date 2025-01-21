@@ -1,28 +1,44 @@
 header {
 
   // position: relative;
-  .header-top,.header-bottom {
-   &::after {
-    // border-bottom: 1px solid rgba(255, 255, 255, .25);
-    height: 1px;
-    background: rgba(255, 255, 255, .25);
-    width: 100%;
-    content: "";
-    position: absolute;
-    left: 0;
-   }
-  }
+  // .header-top,.header-bottom {
+  //  &::after {
+  //   height: 1px;
+  //   background: rgba(255, 255, 255, .25);
+  //   width: 100%;
+  //   content: "";
+  //   position: absolute;
+  //   left: 0;
+  //  }
+  // }
 
-  .header-top{
-    &::after {
-      bottom: 45px;
-    }
-  }
+  // .header-top{
+  //   &::after {
+  //     bottom: 45px;
+  //   }
+  // }
+
+  // .header-bottom {
+  //   &::after {
+  //     bottom: 1px;
+  //   }
+  // }
 
   .header-bottom {
-    &::after {
-      bottom: 1px;
-    }
+    // position: relative;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+
+  .line {
+    content: "";
+    display: flex;
+    height: 45px;
+    left: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .25);
+    border-top: 1px solid rgba(255, 255, 255, .25);
+    bottom: 20px;
+    z-index: -1;
   }
 
 }
