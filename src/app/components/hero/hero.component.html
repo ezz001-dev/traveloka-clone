@@ -1,35 +1,140 @@
 <section class="relative hero pt-12 ">
   <div class="relative from-blue-900 to-transparent pt-10">
     <div class="container mx-auto px-6 py-12 text-white flex flex-col">
-      <h1 class="text-3xl font-bold mx-auto">Wujudkan Perjalananmu dengan Caramu</h1>
+      <h1 class="text-3xl font-bold mx-auto hero-title">Wujudkan Perjalananmu dengan Caramu</h1>
       <div class="bg-transparent shadow-lg rounded-lg mt-6 p-6 text-white box-border">
-        <div class="flex items-center justify-between space-x-4 border-b-2 border-solid pb-10 box-border">
-          <button class="py-2 px-4 rounded bg-white text-black">
-
-            <span>
+        <div class="flex items-center justify-between space-x-4 border-b-2 border-solid pb-8 box-border text-gray-300">
+          <button class="py-2 px-4 rounded-3xl bg-white text-black flex flex-col justify-center gap-2 ">
+            <span class="icon">
+              <img src="icon/plane.png" alt="">
+            </span>
+            <span class="font-bold">
               Tiket Pesawat
             </span>
           </button>
-          <button class="py-2 px-4 rounded hover:border hover:border-solid">Tiket Kereta Api</button>
-          <button class="py-2 px-4 rounded hover:border hover:border-solid">Tiket Bus</button>
+          <button class="py-2 px-4 rounded-3xl hover:border hover:border-solid flex flex-col justify-center gap-2">
+            <span class="icon">
+              <img src="icon/train.png" alt="">
+            </span>
+            <span class="font-bold">
+              Tiket Kereta Api
+            </span>
+          </button>
+          <button class="py-2 px-4 rounded-3xl hover:border hover:border-solid flex flex-col justify-center gap-2">
+            <span class="icon">
+              <img src="icon/train.png" alt="">
+            </span>
+            <span class="font-bold">
+              Tiket Bus
+            </span>
+          </button>
+          <button class="py-2 px-4 rounded-3xl hover:border hover:border-solid flex flex-col justify-center gap-2">
+            <span class="icon">
+              <img src="icon/car.png" alt="">
+            </span>
+            <span class="font-bold">
+              Rental Mobil
+            </span>
+          </button>
+          <button class="py-2 px-4 rounded-3xl hover:border hover:border-solid flex flex-col justify-center gap-2">
+            <span class="icon">
+              <img src="icon/car.png" alt="">
+            </span>
+            <span class="font-bold">
+              Rental Mobil
+            </span>
+          </button>
+          <button class="py-2 px-4 rounded-3xl hover:border hover:border-solid flex flex-col justify-center gap-2">
+            <span class="icon">
+              <img src="icon/car.png" alt="">
+            </span>
+            <span class="font-bold">
+              Rental Mobil
+            </span>
+          </button>
+          <button class="py-2 px-4 rounded-3xl hover:border hover:border-solid flex flex-col justify-center gap-2">
+            <span class="icon">
+              <img src="icon/car.png" alt="">
+            </span>
+            <span class="font-bold">
+              Rental Mobil
+            </span>
+          </button>
+          <button class="py-2 px-4 rounded-3xl hover:border hover:border-solid flex flex-col justify-center gap-2">
+            <span class="icon">
+              <img src="icon/car.png" alt="">
+            </span>
+            <span class="font-bold">
+              Lainnya
+            </span>
+          </button>
+
 
         </div>
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div>
-            <label class="block text-sm">Dari</label>
-            <input type="text" placeholder="Medan (KNO)" class="w-full p-2 border rounded" />
+
+        <div class="flex flex-row justify-between items-center pt-8">
+          <div class="flex gap-4 font-bold">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Sekali Jalan / Pulang Pergi</button>
+            <button class="bg-black bg-opacity-50 text-white px-4 py-2 rounded-md ">Multi-kota</button>
           </div>
-          <div>
-            <label class="block text-sm">Ke</label>
-            <input type="text" placeholder="Surabaya (SUB)" class="w-full p-2 border rounded" />
-          </div>
-          <div>
-            <label class="block text-sm">Tanggal Pergi</label>
-            <input type="date" class="w-full p-2 border rounded" />
+
+          <div class="flex gap-4 items-center right-form">
+            <div class="text-gray-700 bg-transparent bg-opacity-50 w-rp">
+              <select  class="border border-white rounded-md shadow-sm p-2 bg-opacity-50">
+                <option>Economy</option>
+                <option>Business</option>
+                <option>First Class</option>
+              </select>
+            </div>
+            <div class="text-gray-700 bg-gray bg-opacity-50 w-rp">
+              <select  class="border border-white rounded-md shadow-sm p-2 bg-opacity-50">
+                <option>Economy</option>
+                <option>Business</option>
+                <option>First Class</option>
+              </select>
+            </div>
           </div>
         </div>
+
+
+
+
+        <div class="flex justify-between gap-4">
+
+          <div class="mt-6 grid grid-cols-1 md:grid-cols-2 mr-2 flex-auto">
+            <div>
+              <label class="block text-sm">Dari</label>
+              <input type="text" placeholder="Medan (KNO)" class="w-full p-2 border " />
+            </div>
+            <div>
+              <label class="block text-sm">Ke</label>
+              <input type="text" placeholder="Surabaya (SUB)" class="w-full p-2 border " />
+            </div>
+          </div>
+
+          <div class="mt-6 grid grid-cols-1 md:grid-cols-2 mr-2 flex-auto">
+            <div>
+              <label class="block text-sm">Dari</label>
+              <input type="text" placeholder="Medan (KNO)" class="w-full p-2 border " />
+            </div>
+            <div>
+              <label class="block text-sm">Ke</label>
+              <input type="text" placeholder="Surabaya (SUB)" class="w-full p-2 border " />
+            </div>
+          </div>
+
+          <div class="mt-6 grid grid-cols-1 md:grid-cols-1 mr-2 ">
+            <div class="flex items-end">
+              <!-- <label for="block text-sm">ss</label> -->
+              <button class=" py-2 px-6 bg-orange-500 text-white rounded p-2 w-full">Cari</button>
+            </div>
+          </div>
+
+        </div>
+
+
         <div class="mt-6 flex justify-between items-center">
-          <button class="py-2 px-4 bg-orange-500 text-white rounded">Cari</button>
+          <!-- <button class="py-2 px-4 bg-orange-500 text-white rounded">Cari</button> -->
           <div class="flex items-center space-x-2 text-sm">
             <label>
               <input type="checkbox" class="mr-2" /> Sekali Jalan

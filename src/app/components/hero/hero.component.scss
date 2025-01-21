@@ -3,4 +3,34 @@
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 600px;
+
+  .hero-title {
+    font-size: 32px;
+    line-height: 56px;
+  }
+
+  .icon {
+    height: 30px;
+    width: 30px;
+    display: block;
+    margin: auto;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .right-form {
+    width: 400px;
+    .w-rp {
+      flex: 1 1 auto;
+
+      select {
+        color: white;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.25);
+      }
+    }
+  }
 }
