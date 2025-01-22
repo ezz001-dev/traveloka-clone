@@ -1,13 +1,20 @@
-import { Component, HostListener } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   isScrolled = false;
+  isHomePage = false;
+
+  classHeader: string = '';
+  textClass: string = ''
+
 
   topMenu: Menu[] = [
     { label: 'Promo', url: '' },
@@ -27,10 +34,35 @@ export class HeaderComponent {
     { label: 'Produk Lainnya', url: '' },
   ]
 
+  constructor(private router: Router) {
+
+  }
+
+  ngOnInit(): void {
+    this.router.events.subscribe(() => {
+      this.checkIfHomePage();
+    })
+  }
+
+  checkIfHomePage(): void {
+    this.isHomePage = this.router.url == '/' || this.router.url == '/home';
+    if (!this.isHomePage) {
+      this.classHeader = `shadow-md bg-white relative`
+      this.textClass = `text-gray-700`
+    }
+  }
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    const offset = window.pageYOffset || document.documentElement.scrollTop;
-    this.isScrolled = offset > 50; // Ganti 50 dengan nilai tinggi scroll yang diinginkan
+    // console.log(this.router.url)
+
+    if (this.isHomePage) {
+      const offset = window.pageYOffset || document.documentElement.scrollTop;
+      this.isScrolled = offset > 50; // Ganti 50 dengan nilai tinggi scroll yang diinginkan
+      console.log("Home", this.isHomePage)
+      console.log(this.isScrolled)
+    }
+
   }
 }
 

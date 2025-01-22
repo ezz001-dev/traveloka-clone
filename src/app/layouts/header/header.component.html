@@ -1,7 +1,9 @@
 <header
-  [class.bg-white]="isScrolled"
-  [class.bg-transparent]="!isScrolled"
-  [class.shadow-md]="isScrolled"
+  [class.bg-white]="isScrolled && isHomePage"
+  [class.bg-transparent]="!isScrolled && isHomePage"
+  [class.shadow-md]="isScrolled && isHomePage"
+  [class.shadow-lg]="!isScrolled && isHomePage"
+  [ngClass]="classHeader"
   class="fixed top-0 left-0 w-full transition-all duration-300 z-50"
 >
   <div class="container mx-auto flex flex-col px-6 py-4">
@@ -9,8 +11,9 @@
     <div class="flex items-center justify-between mb-4 header-top">
       <div class="logo">
          <h2
-         [class.text-white]="!isScrolled"
-          [class.text-gray]="isScrolled"
+         [class.text-white]="!isScrolled && isHomePage"
+          [class.text-gray-700]="isScrolled && isHomePage"
+          [ngClass]="textClass"
           class="text-2xl text-white" >
           Traveloka
          </h2>
@@ -18,8 +21,9 @@
 
       <div class="flex items-center gap-4">
         <nav
-          [class.text-white]="!isScrolled"
-          [class.text-gray]="isScrolled"
+          [class.text-white]="!isScrolled && isHomePage"
+          [class.text-gray-700]="isScrolled && isHomePage"
+          [ngClass]="textClass"
           class="hidden md:flex space-x-6 text-sm" aria-label="Menu utama">
           @for (item of topMenu; track $index) {
             <a href="#" class="font-bold hover:bg-black hover:bg-opacity-50 py-2 px-2 rounded">{{ item.label }}</a>
@@ -29,10 +33,11 @@
 
         <div class="flex items-center space-x-4">
           <button
-              [class.text-white]="!isScrolled"
-              [class.text-gray]="isScrolled"
+              [class.text-white]="!isScrolled && isHomePage"
+              [class.text-gray-700]="isScrolled"
+              [ngClass]="textClass"
               class="text-sm border border-solid border-neutral-300 rounded px-4 py-2">Log In</button>
-          <button class="bg-blue-500 text-white px-4 py-2 rounded">Daftar</button>
+          <button class="bg-blue-500 text-white px-4 py-2 rounded ">Daftar</button>
         </div>
       </div>
     </div>
@@ -42,13 +47,16 @@
     <div class="space-x-4 header-bottom">
       <div class="absolute w-full line"></div>
       <nav
-        [class.text-white]="!isScrolled"
-        [class.text-gray]="isScrolled"
+
         class="hidden md:flex space-x-6 text-sm flex items-center"
         aria-label="Menu produk">
         @for (item of bottomMenu; track $index) {
           <span class="flex-auto">
-            <a href="#" class="py-2 px-2 font-bold hover:bg-black hover:bg-opacity-50 rounded">{{ item.label }}</a>
+            <a href="#" class="py-2 px-2 font-bold hover:bg-black hover:bg-opacity-50 rounded"
+            [class.text-white]="!isScrolled && isHomePage"
+            [class.text-gray-800]="isScrolled && isHomePage"
+            [ngClass]="textClass"
+            >{{ item.label }}</a>
           </span>
         }
       </nav>
