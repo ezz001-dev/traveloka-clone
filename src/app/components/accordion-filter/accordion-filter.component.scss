@@ -1,0 +1,36 @@
+
+$blue : rgb(1, 148, 243);
+
+.p-accordion {
+  width: 100%;
+}
+
+.p-accordionheader {
+  background-color: white;
+  color: black;
+}
+.p-accordioncontent-content {
+  background-color: white;
+  color: black;
+}
+
+.p-checkbox-box {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.p-checkbox-checked .p-checkbox-box {
+  background-color: $blue;
+  border: none;
+  color: white;
+
+  .p-checkbox-icon {
+    color: white;
+  }
+}
+
+
+.accordion-comp {
+  max-width: 270px;
+  min-width: 260px;
+}
