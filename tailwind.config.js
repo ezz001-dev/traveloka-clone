@@ -7,5 +7,6 @@ module.exports = {
   plugins: [
     require('tailwindcss-primeui')
   ],
+  // prefix: 'tw-'
 };
 

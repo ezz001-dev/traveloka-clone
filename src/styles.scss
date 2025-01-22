@@ -3,6 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+// @layer tailwind-base, primeng, tailwind-utilities;
+// @layer tailwind-base {
+//   @tailwind base;
+// }
+// @layer primeng;
+// @layer tailwind-utilities {
+//   @tailwind components;
+//   @tailwind utilities;
+// }
+
 
 *{
   box-sizing: border-box;
@@ -20,4 +30,12 @@
 .ptb8 {
   padding-top: 8px;
   padding-bottom: 8px;
+}
+
+input:focus-visible {
+  outline: none;
+}
+
+input {
+  color: black;
 }
