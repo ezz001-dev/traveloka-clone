@@ -2,7 +2,6 @@
   [class.bg-white]="isScrolled && isHomePage"
   [class.bg-transparent]="!isScrolled && isHomePage"
   [class.shadow-md]="isScrolled && isHomePage"
-  [class.shadow-lg]="!isScrolled && isHomePage"
   [ngClass]="classHeader"
   class="fixed top-0 left-0 w-full transition-all duration-300 z-50"
 >
@@ -16,6 +15,10 @@
           [ngClass]="textClass"
           class="text-2xl text-white" >
           Traveloka
+
+          <!-- @if (isHomePage) {
+            Traveloka
+          } -->
          </h2>
       </div>
 

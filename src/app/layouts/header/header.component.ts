@@ -46,10 +46,12 @@ export class HeaderComponent implements OnInit {
 
   checkIfHomePage(): void {
     this.isHomePage = this.router.url == '/' || this.router.url == '/home';
+    console.log("isHome ", this.isHomePage)
     if (!this.isHomePage) {
       this.classHeader = `shadow-md bg-white relative`
       this.textClass = `text-gray-700`
     }
+    console.log(this.textClass)
   }
 
   @HostListener('window:scroll', [])

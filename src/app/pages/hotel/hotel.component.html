@@ -36,10 +36,10 @@
     </div>
 
     <div class="wrapper-comp flex flex-col gap-4 pt-12">
-      <app-hotel-card></app-hotel-card>
-      <app-hotel-card></app-hotel-card>
-      <app-hotel-card></app-hotel-card>
-      <app-hotel-card></app-hotel-card>
+      @for (item of hotels; track $index) {
+        <app-hotel-card [hotel]="item" ></app-hotel-card>
+      }
+
     </div>
 
   </div>

@@ -1,7 +1,7 @@
 <section class="relative hero pt-12 ">
   <div class="relative from-blue-900 to-transparent pt-10">
     <div class="container mx-auto px-6 py-12 text-white flex flex-col">
-      <h1 class="text-3xl font-bold mx-auto hero-title">Wujudkan Perjalananmu dengan Caramu</h1>
+      <h1 class="text-3xl font-bold mx-auto hero-title text-white">Wujudkan Perjalananmu dengan Caramu</h1>
       <div class="bg-transparent rounded-lg mt-6 p-6 text-white box-border">
         <div class="flex items-center justify-between space-x-4 border-b-2 border-solid pb-8 box-border text-gray-300">
 
@@ -17,7 +17,7 @@
               <span class="icon">
                 <img [src]="item.path" [alt]="item.label">
               </span>
-              <span class="font-bold">
+              <span class="font-bold " [ngClass]="item.isActive ? 'text-black' : 'text-gray-300' ">
                 {{ item.label }}
               </span>
             </button>
@@ -68,15 +68,15 @@
 
           <div class="mt-6 grid grid-cols-1 md:grid-cols-3 mr-2 flex-auto wrapper-form">
             <div>
-              <label class="block text-sm font-semibold mb-2">Kota, tujuan, atau nama hotel</label>
+              <label class="block text-sm font-semibold mb-2 text-white">Kota, tujuan, atau nama hotel</label>
               <input type="text" placeholder="Medan (KNO)" class="w-full p-2 border bg-white input-1" />
             </div>
             <div>
-              <label class="block text-sm font-semibold mb-2">Tanggal Check-in & Check-out</label>
+              <label class="block text-sm font-semibold mb-2 text-white">Tanggal Check-in & Check-out</label>
               <input type="text" placeholder="Surabaya (SUB)" class="w-full p-2 border bg-white input-2" />
             </div>
             <div >
-              <label class="block text-sm font-semibold mb-2">Tamu dan Kamar</label>
+              <label class="block text-sm font-semibold mb-2 text-white">Tamu dan Kamar</label>
               <div class="wrapper-input relative">
                 <input type="text" placeholder="Surabaya (SUB)" class="w-full p-2 border bg-white input-3" />
                 <button class="absolute bg-orange-500 text-white btn-search" (click)="onSearch()">Cari</button>

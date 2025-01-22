@@ -1,1 +1,35 @@
-<p>produc-details works!</p>
+
+<div class="sticky top-0 flex-1 p-4 bg-white shadow-lg z-10 flex justify-center items-center">
+  <div class="container mx-auto px-6">
+
+    <app-search-bar></app-search-bar>
+
+  </div>
+</div>
+
+<div class="container mx-auto px-6 py-6 bg-white">
+
+  <h2 class="text-2xl font-bold mb-4">{{ hotel.name }}</h2>
+  <p class="text-gray-600 mb-6">{{ hotel.location }}</p>
+
+  <div class="flex gap-4 warpper-content">
+    <!-- Main Image -->
+    <div class="w-1/2 m-img">
+      <img [src]="hotel.images[0]" alt="{{ hotel.name }}" class="w-full h-full object-cover">
+    </div>
+
+    <!-- Image Gallery -->
+    <div class="flex-auto grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div *ngFor="let image of hotel.images.slice(1)" class="overflow-hidden shadow-md flex-auto">
+        <img [src]="image" alt="Hotel Image" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Description -->
+  <div class="mt-6">
+    <h3 class="text-lg font-semibold">Deskripsi</h3>
+    <p class="text-gray-700">{{ hotel.description }}</p>
+  </div>
+</div>

@@ -40,12 +40,10 @@
     <!-- Informasi Hotel -->
     <div class="flex-1 flex shadow-lg">
       <div class="flex-1 p-4">
-        <h2 class="text-lg font-bold text-gray-800">Bukit Vipassana Hotel</h2>
-        <p class="text-sm text-gray-600">Lembang, Bandung</p>
+        <h2 class="text-lg font-bold text-gray-800">{{ hotel.name }}</h2>
+        <p class="text-sm text-gray-600">{{ hotel.location }}</p>
         <div class="mt-2 flex flex-wrap gap-2 text-sm text-blue-600">
-          <span class="bg-blue-100 px-2 py-1 rounded">Area main anak</span>
-          <span class="bg-blue-100 px-2 py-1 rounded">Layanan pijat</span>
-          <span class="bg-blue-100 px-2 py-1 rounded">Spa</span>
+          <span *ngFor="let amneti of hotel.amenities" class="bg-blue-100 px-2 py-1 rounded">{{ amneti }}</span>
         </div>
         <div class="mt-2 text-sm text-gray-500">
           <span class="font-semibold text-blue-500">8.4</span> (1,2rb ulasan) Mengagumkan
@@ -60,6 +58,7 @@
         <p class="text-red-500 text-sm">Sisa 2 kamar di harga ini!</p>
         <button
           class="mt-4 px-2 py-2 bg-orange-500 text-white rounded hover:bg-orange-600 md-btn ml-auto"
+          (click)="toDetail(hotel.name )"
         >
           Pilih Kamar
         </button>
