@@ -1,0 +1,11 @@
+<div class="container mx-auto px-4 py-10">
+  <h2 class="text-2xl font-bold mb-6">Maksimalkan rencanamu sesukamu</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+    <div *ngFor="let option of travelOptions" class="bg-white rounded-lg shadow-md overflow-hidden">
+      <img src="img/travel-opt.webp" alt="{{ option.title }}" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-lg font-semibold">{{ option.title }}</h3>
+      </div>
+    </div>
+  </div>
+</div>
