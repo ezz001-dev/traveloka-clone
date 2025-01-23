@@ -3,6 +3,7 @@ import { BookingCardComponent } from '../../components/booking-card/booking-card
 import { FormsModule } from '@angular/forms';
 import { AddonsComponent } from '../../components/addons/addons.component';
 import { CancellationPolicyComponent } from '../../components/cancellation-policy/cancellation-policy.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-booking-pages',
@@ -28,6 +29,8 @@ export class BookingPagesComponent {
     totalPrice: 450023,
   };
 
+  constructor(private router: Router) { }
+
 
   submitForm() {
     // Handle form submission logic here
@@ -42,6 +45,7 @@ export class BookingPagesComponent {
   proceedToPayment() {
     // Handle payment logic here
     console.log('Proceeding to payment...');
+    this.router.navigate(['payment'])
   }
 }
 

@@ -1,0 +1,46 @@
+<div class="w-full payment-pages">
+  <div class="container mx-auto flex gap-4 p-6">
+    <div class="flex flex-col gap-4 flex-auto">
+      <app-payment-method></app-payment-method>
+
+
+      <div class="flex flex-col gap-4">
+
+        <div class="other-options bg-white rounded-lg shadow-md p-4 mb-4">
+
+          <div *ngFor="let option of paymentOptions" class="flex items-center mb-2">
+            <input type="radio" id="{{ option.name }}" name="paymentMethod" class="mr-2">
+            <label for="{{ option.name }}" class="flex-1">
+              <span class="font-semibold">{{ option.name }}</span>
+              <span *ngIf="option.isNew" class="text-green-500 text-sm">(Baru)</span>
+              <span *ngIf="option.description" class="text-gray-500 text-sm"> - {{ option.description }}</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-4 ">
+          <h3 class="font-semibold">Pakal Kupon</h3>
+          <input type="text" [(ngModel)]="couponCode" placeholder="Masukkan kode kupon" class="border border-gray-300 rounded-md p-2 w-full mt-2">
+          <button (click)="applyCoupon()" class="bg-blue-500 text-white rounded-md py-2 px-4 mt-2">Terapkan</button>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-4 flex flex-col gap-4">
+          <div class="w-full">
+            <h3 class="font-semibold">Harga Total</h3>
+            <p class="text-xl font-bold">Rp {{ totalPrice  }}</p>
+          </div>
+
+          <div class="w-full">
+            <button (click)="proceedToPayment()" class="bg-orange-500 text-white rounded-md py-2 px-4 w-full mt-4">Bayar dengan Kartu Kredit/Debit</button>
+            <p class="text-sm mt-2">Dengan lanjut membayar, kamu menyetujui Syarat & Ketentuan dan Kebijakan Privasi Traveloka.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="min-31 max-31 flex-1 sticky top-0 w-hotel-details">
+      <app-hotel-details ></app-hotel-details>
+    </div>
+  </div>
+</div>

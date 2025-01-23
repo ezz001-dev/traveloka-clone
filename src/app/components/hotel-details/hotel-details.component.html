@@ -1,0 +1,41 @@
+<div class="bg-white rounded-lg shadow-md p-4">
+  <h2 class="text-xl font-bold mb-2">Rincian Hotel</h2>
+  <p class="text-gray-600 mb-4">No. Pesanan: {{ hotelDetails.bookingNumber }}</p>
+
+  <h3 class="text-lg font-semibold">{{ hotelDetails.hotelName }}</h3>
+
+  <div class="flex justify-between mb-4">
+    <div>
+      <p class="text-gray-600">Check-in</p>
+      <p class="font-semibold">{{ hotelDetails.checkIn }}</p>
+    </div>
+    <div>
+      <p class="text-gray-600">Check-out</p>
+      <p class="font-semibold">{{ hotelDetails.checkOut }}</p>
+    </div>
+  </div>
+
+  <p class="text-gray-600">{{ hotelDetails.roomType }}</p>
+  <p class="text-gray-600">{{ hotelDetails.guests }} Tamu, {{ hotelDetails.beds }} Bed</p>
+  <p class="text-gray-600" *ngIf="!hotelDetails.breakfastIncluded">Tanpa Sarapan</p>
+  <p class="text-gray-600" *ngIf="hotelDetails.breakfastIncluded">Termasuk Sarapan</p>
+  <p class="text-gray-600">{{ hotelDetails.amenities.join(', ') }}</p>
+
+  <h4 class="font-semibold mt-4">Permintaan Khusus (Jika ada)</h4>
+  <p class="text-gray-600">{{ hotelDetails.specialRequests }}</p>
+
+  <h4 class="font-semibold mt-4">Nama Tamu</h4>
+  <p class="text-gray-600">{{ hotelDetails.guestName }}</p>
+
+  <h4 class="font-semibold mt-4">Kebijakan Pembatalan</h4>
+  <ul class="list-disc pl-5">
+    <li *ngFor="let policy of hotelDetails.refundPolicy" class="text-gray-600">{{ policy }}</li>
+  </ul>
+
+  <h4 class="font-semibold mt-4">Data Pemesan</h4>
+  <p class="text-gray-600">{{ hotelDetails.orderName }}</p>
+  <p class="text-gray-600">{{ hotelDetails.orderPhone }}</p>
+  <p class="text-gray-600">{{ hotelDetails.orderEmail }}</p>
+
+  <p class="mt-4 text-green-500">Ini pilihan yang tepat untuk tepat menginapmu!</p>
+</div>
