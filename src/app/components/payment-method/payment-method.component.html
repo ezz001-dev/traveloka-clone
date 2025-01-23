@@ -1,0 +1,22 @@
+<div class="container mx-auto px-4 py-10">
+  <div class="bg-blue-100 p-4 rounded-md mb-4">
+    <p class="text-blue-800">Tenang, harganya tidak akan berubah. Yuk selesaikan pembayaran dalam <span class="font-bold">00:15:37</span></p>
+  </div>
+
+  <h2 class="text-xl font-bold mb-4">Mau bayar pakai metode apa?</h2>
+
+  <div class="bg-white rounded-lg shadow-md p-4">
+    <div class="mb-4">
+      <h3 class="font-semibold">Virtual Account</h3>
+    </div>
+
+    <div *ngFor="let method of paymentMethods" class="flex items-center mb-2">
+      <input type="radio" id="{{ method.name }}" name="paymentMethod" [value]="method.name" (change)="selectMethod(method.name)" class="mr-2" [checked]="selectedMethod === method.name">
+      <label for="{{ method.name }}" class="flex-1">
+        <span class="font-semibold">{{ method.name }}</span>
+        <span *ngIf="method.isNew" class="text-green-500 text-sm">(Baru)</span>
+        <span *ngIf="method.description" class="text-gray-500 text-sm"> - {{ method.description }}</span>
+      </label>
+    </div>
+  </div>
+</div>
