@@ -1,0 +1,130 @@
+<div class="w-full booking-pages">
+  <div class="container mx-auto p-6 flex gap-4">
+
+    <div class="flex flex-col gap-4">
+      <div class="bg-white rounded-lg shadow-md p-4">
+        <h2 class="text-xl font-bold mb-4">Data Pemesan (untuk E-voucher)</h2>
+        <p class="text-gray-600 mb-4">Isilah semua kolom dengan benar untuk memastikan kamu dapat menerima voucher konfirmasi pemesanan di email yang dicantumkan.</p>
+
+        <form (ngSubmit)="submitForm()">
+          <!-- Full Name -->
+          <div class="mb-4">
+            <label for="fullName" class="block text-gray-700">Nama Lengkap (sesuai KTP/Paspor/SIM)</label>
+            <input type="text" id="fullName" [(ngModel)]="fullName" name="fullName" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" placeholder="Masukkan nama lengkap">
+          </div>
+
+          <!-- Email -->
+          <div class="mb-4">
+            <label for="email" class="block text-gray-700">Email</label>
+            <input type="email" id="email" [(ngModel)]="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" placeholder="Masukkan email">
+          </div>
+
+          <!-- Phone Number -->
+          <div class="mb-4">
+            <label for="phoneNumber" class="block text-gray-700">Nomor Handphone</label>
+            <div class="flex">
+              <input type="text" class="w-1/4 border border-gray-300 rounded-md p-2" value="+62" readonly>
+              <input type="text" id="phoneNumber" [(ngModel)]="phoneNumber" name="phoneNumber" required class="w-full border border-gray-300 rounded-md p-2 ml-2" placeholder="Masukkan nomor handphone">
+            </div>
+          </div>
+
+          <!-- Booking Options -->
+          <div class="mb-4 flex justify-between">
+            <label class="flex items-center">
+              <input type="radio" [(ngModel)]="isSameAsBooker" name="bookingOption" value="same" class="mr-2">
+              <span>Sama dengan pemesan</span>
+            </label>
+            <label class="flex items-center">
+              <input type="radio" [(ngModel)]="isSameAsBooker" name="bookingOption" value="other" class="mr-2">
+              <span>Saya memesanan untuk orang lain</span>
+            </label>
+          </div>
+
+        </form>
+      </div>
+
+       <!-- Special Requests Card -->
+      <div class="bg-white rounded-lg shadow-md p-4">
+        <h3 class="text-lg font-bold mb-2">Beri tahu di sini jika ada permintaan khusus</h3>
+        <p class="text-gray-600 mb-4">Ketersediaan permintaanmu akan diinformasikan pada waktu check-in. Blaya tambahan mungkin akan dikenakan tapi kamu masih bisa membatalkannya nanti.</p>
+
+        <div class="grid grid-cols-2 gap-4">
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2">
+            Kamar Bebas Asap Rokok
+          </label>
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2">
+            Kamar dengan Pintu Penghubung
+          </label>
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2">
+            Lantai Atas
+          </label>
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2">
+            Tipe Ranjang
+          </label>
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2">
+            Waktu check-in
+          </label>
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2">
+            Waktu check-out
+          </label>
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2">
+            Lainnya
+          </label>
+        </div>
+      </div>
+
+      <!-- addons -->
+      <app-addons></app-addons>
+
+      <!-- price detail -->
+      <div class="bg-white rounded-lg shadow-md p-4">
+        <h2 class="text-xl font-bold mb-4">Rincian Harga</h2>
+        <p class="text-blue-500 mb-4">Login sekarang dan nikmati kupon khusus pengguna baru kami, kamu bisa hemat hingga Rp1.000.000 pada pemesanan pertama.</p>
+
+        <div class="mb-4">
+          <p class="flex justify-between">
+            <span>Harga Kamar</span>
+            <span>Rp {{ priceBreakdown.roomPrice }}</span>
+          </p>
+          <p class="flex justify-between">
+            <span>{{ priceBreakdown.roomDescription }}</span>
+          </p>
+        </div>
+
+        <div class="mb-4">
+          <p class="flex justify-between">
+            <span>Pajak dan Biaya</span>
+            <span>Rp {{ priceBreakdown.taxAndFees }}</span>
+          </p>
+        </div>
+
+        <div class="border-t border-gray-300 mt-4 pt-2">
+          <p class="flex justify-between font-bold">
+            <span>Harga Total</span>
+            <span>Rp {{ priceBreakdown.totalPrice }}</span>
+          </p>
+        </div>
+
+        <p class="text-orange-500 text-sm my-4">Kamu tidak perlu bayar apa pun sekarang!</p>
+
+        <button (click)="proceedToPayment()" class="bg-orange-500 text-white rounded-md py-2 px-4 w-full">Lanjut ke Pembayaran</button>
+      </div>
+
+    </div>
+
+
+
+    <div class="flex-auto w-1/3 m-w31 flex flex-col gap-4">
+      <app-booking-card></app-booking-card>
+      <app-cancellation-policy></app-cancellation-policy>
+    </div>
+  </div>
+</div>
+

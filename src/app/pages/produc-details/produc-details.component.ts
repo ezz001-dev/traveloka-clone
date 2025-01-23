@@ -2,7 +2,7 @@ import { NgFor } from '@angular/common';
 import { Component, OnInit, Pipe } from '@angular/core';
 import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
 import { HotelService } from '../../services/hotel.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface Hotel {
   name: string;
@@ -17,6 +17,7 @@ interface Hotel {
 }
 
 interface RoomOption {
+  id: number,
   name: string;
   description: string;
   guests: number;
@@ -68,6 +69,7 @@ export class ProducDetailsComponent implements OnInit {
     size: '24.0 m²',
     options: [
       {
+        id: 1,
         name: 'Tanpa Sarapan',
         description: '1 ranjang twin',
         guests: 2,
@@ -76,6 +78,7 @@ export class ProducDetailsComponent implements OnInit {
         breakfastIncluded: false,
       },
       {
+        id: 2,
         name: 'Termasuk sarapan untuk 1 orang',
         description: '1 ranjang twin',
         guests: 1,
@@ -87,7 +90,7 @@ export class ProducDetailsComponent implements OnInit {
   };
 
 
-  constructor(private hotelService: HotelService, private route: ActivatedRoute) { }
+  constructor(private hotelService: HotelService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(res => {
@@ -105,6 +108,10 @@ export class ProducDetailsComponent implements OnInit {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+
+  onBook(id: number) {
+    this.router.navigate([`booking/${id}`])
   }
 
 }

@@ -122,7 +122,7 @@
               <span class="text-orange-500 font-bold">Rp {{ option.price }}</span>
             </td>
             <td class="py-2 px-4 border-b">
-              <button class="bg-blue-500 text-white rounded-md py-1 px-2">Pilih</button>
+              <button class="bg-blue-500 text-white rounded-md py-1 px-2" (click)="onBook(option.id)" >Pilih</button>
             </td>
           </tr>
         </tbody>
