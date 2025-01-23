@@ -100,4 +100,11 @@ export class ProducDetailsComponent implements OnInit {
     // this.hotelService.filterHotels('')
   }
 
+  scrollToRoomDetails() {
+    const element = document.getElementById('room-details');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
 }

@@ -18,7 +18,7 @@ export class HeroComponent {
       isActive: true
     },
     {
-      label: 'Tiket Pesawat', url: '', path: 'icon/plane.png',
+      label: 'Tiket Pesawat', url: '', path: 'icon/air-plane.png',
       isActive: false
     },
     {
