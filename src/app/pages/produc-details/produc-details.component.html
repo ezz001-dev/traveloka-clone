@@ -9,9 +9,6 @@
 
 <div class="container mx-auto px-6 py-6 bg-white">
 
-  <h2 class="text-2xl font-bold mb-4">{{ hotel.name }}</h2>
-  <p class="text-gray-600 mb-6">{{ hotel.location }}</p>
-
   <div class="flex gap-4 warpper-content">
     <!-- Main Image -->
     <div class="w-1/2 m-img">
@@ -26,10 +23,117 @@
     </div>
   </div>
 
+</div>
 
-  <!-- Description -->
-  <div class="mt-6">
-    <h3 class="text-lg font-semibold">Deskripsi</h3>
+<div class="container mx-auto px-4 py-10">
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+    <div class="card">
+      <h2 class="text-2xl font-bold mb-4">{{ hotel.name }}</h2>
+      <p class="text-gray-600 mb-4">{{ hotel.location }}</p>
+    </div>
+
+    <div class="card">
+      <!-- Price and Booking Button -->
+    <div class="flex gap-4 items-center justify-end">
+      <div class="flex flex-col items-end">
+        <label for="">Harga/kamar/malam mulai dari</label>
+        <p class="text-xl font-bold text-orange-500">Rp {{ hotel.price  }}</p>
+      </div>
+      <button class="bg-orange-500 text-white rounded-md py-2 px-4">Pilih Kamar</button>
+    </div>
+    </div>
+
+  </div>
+
+
+
+  <!-- Alert Message -->
+  <div class="bg-blue-100 p-4 rounded-md mb-4">
+    <p class="text-blue-700">Jangan lewatkan! Sisa 2 kamar untuk harga paling murah.</p>
+  </div>
+
+  <!-- Grid Layout for Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+    <!-- Rating Card -->
+    <div class="bg-white rounded-lg shadow-md p-4">
+      <h3 class="text-lg font-semibold">Mengesankan</h3>
+      <div class="flex items-center">
+        <span class="text-blue-500 font-bold text-2xl">{{ hotel.rating }}</span>
+        <span class="text-gray-500 text-sm"> (Dari {{ hotel.reviews }} review tamu yang terverifikasi)</span>
+      </div>
+    </div>
+
+    <!-- Accommodation Card -->
+    <div class="bg-white rounded-lg shadow-md p-4">
+      <h3 class="text-lg font-semibold">Area Akomodasi</h3>
+      <p class="text-gray-600">{{ hotel.address }}</p>
+      <button class="text-blue-500 underline">Lihat Peta</button>
+    </div>
+
+    <!-- Facilities Card -->
+    <div class="bg-white rounded-lg shadow-md p-4">
+      <h3 class="text-lg font-semibold">Fasilitas Utama</h3>
+      <ul class="list-disc pl-5">
+        <li *ngFor="let amenity of hotel.amenities" class="text-gray-600">{{ amenity }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Description Section -->
+  <div class="bg-gray-100 p-4 rounded-md mb-4">
     <p class="text-gray-700">{{ hotel.description }}</p>
   </div>
+
+
 </div>
+
+
+<!-- room -->
+<div class="container mx-auto px-4 py-10">
+  <div class="flex flex-col md:flex-row">
+    <!-- Left Side: Room Information -->
+    <div class="md:w-1/4 mb-6 md:mb-0">
+      <h2 class="text-2xl font-bold mb-2">{{ room.name }}</h2>
+      <div class="w-full">
+        <img [src]="room.imageUrl" alt="{{ room.name }}" class="w-full h-48 object-cover rounded-lg mb-4">
+      </div>
+      <p class="text-gray-600">Ukuran: {{ room.size }}</p>
+    </div>
+
+    <!-- Right Side: Room Options Table -->
+    <div class="flex-auto flex justify-center items-center p-6">
+      <table class="min-w-full bg-white border border-gray-300">
+        <thead>
+          <tr class="bg-gray-100">
+            <th class="py-2 px-4 border-b text-left">Pilihan Kamar</th>
+            <th class="py-2 px-4 border-b text-center">Tamu</th>
+            <th class="py-2 px-4 border-b text-center">Harga/kamar/malam</th>
+            <th class="py-2 px-4 border-b"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let option of room.options">
+            <td class="py-2 px-4 border-b">{{ option.name }}<br><small class="text-gray-500">{{ option.description }}</small></td>
+            <td class="py-2 px-4 border-b text-center">{{ option.guests }} orang</td>
+            <td class="py-2 px-4 border-b text-center">
+              <span class="line-through text-gray-500">Rp {{ option.originalPrice }}</span><br>
+              <span class="text-orange-500 font-bold">Rp {{ option.price }}</span>
+            </td>
+            <td class="py-2 px-4 border-b">
+              <button class="bg-blue-500 text-white rounded-md py-1 px-2">Pilih</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
