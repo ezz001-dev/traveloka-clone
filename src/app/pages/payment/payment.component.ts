@@ -2,16 +2,16 @@ import { Component } from '@angular/core';
 import { PaymentMethodComponent } from '../../components/payment-method/payment-method.component';
 import { HotelDetailsComponent } from '../../components/hotel-details/hotel-details.component';
 import { FormsModule } from '@angular/forms';
-import { NgFor, NgIf } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-payment',
   imports: [
     PaymentMethodComponent,
     HotelDetailsComponent,
-    NgIf,
     NgFor,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   templateUrl: './payment.component.html',
   styleUrl: './payment.component.scss'

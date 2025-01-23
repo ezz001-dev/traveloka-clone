@@ -1,6 +1,6 @@
 import { NgClass } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -39,30 +39,31 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.router.events.subscribe(() => {
-      this.checkIfHomePage();
+    this.router.events.subscribe((ev) => {
+      if (ev instanceof NavigationEnd) {
+        this.checkIfHomePage();
+      }
     })
   }
 
   checkIfHomePage(): void {
     this.isHomePage = this.router.url == '/' || this.router.url == '/home';
-    console.log("isHome ", this.isHomePage)
+    // console.log("isHome ", this.isHomePage)
     if (!this.isHomePage) {
       this.classHeader = `shadow-md bg-white relative`
       this.textClass = `text-gray-700`
     }
-    console.log(this.textClass)
+    // console.log(this.textClass)
   }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    // console.log(this.router.url)
 
     if (this.isHomePage) {
       const offset = window.pageYOffset || document.documentElement.scrollTop;
-      this.isScrolled = offset > 50; // Ganti 50 dengan nilai tinggi scroll yang diinginkan
-      console.log("Home", this.isHomePage)
-      console.log(this.isScrolled)
+      this.isScrolled = offset > 50;
+      // console.log("Home", this.isHomePage)
+      // console.log(this.isScrolled)
     }
 
   }

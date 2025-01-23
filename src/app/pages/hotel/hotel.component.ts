@@ -26,4 +26,12 @@ export class HotelComponent implements OnInit {
     })
   }
 
+  getSearchVal(event: any) {
+    if (event) {
+      let result = this.hotelService.filterHotels(event.name)
+      console.log(result)
+      this.hotels = result;
+    }
+  }
+
 }

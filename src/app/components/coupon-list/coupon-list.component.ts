@@ -11,6 +11,11 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class CouponListComponent {
 
+  pathImg = {
+    left: 'icon/left.png',
+    next: 'icon/next.png'
+  }
+
   coupons: Coupon[] = [
     {
       code: 'HELLOSGCAID',
@@ -53,8 +58,21 @@ export class CouponListComponent {
     margin: 15,
     navSpeed: 700,
     navText: [
-      `<span class="font-semibold text-blue rounded-md block" > < </span>`,
-      `<span class="font-semibold text-blue rounded-md block" > > </span>`
+      // `<span class="font-semibold text-blue rounded-md block" > < </span>`,
+      // `<span class="font-semibold text-blue rounded-md block" > > </span>`
+      `<div>
+        <span class="font-semibold text-blue block icon-img" >
+          <img src="${this.pathImg.left}" alt="">
+        </span>
+      </div>
+      `,
+      `
+      <div>
+        <span class="font-semibold text-blue block icon-img" >
+          <img src="${this.pathImg.next}" alt="">
+        </span>
+      </div>
+      `
     ],
     responsive: {
       0: {

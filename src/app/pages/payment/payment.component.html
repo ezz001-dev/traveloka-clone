@@ -12,8 +12,14 @@
             <input type="radio" id="{{ option.name }}" name="paymentMethod" class="mr-2">
             <label for="{{ option.name }}" class="flex-1">
               <span class="font-semibold">{{ option.name }}</span>
-              <span *ngIf="option.isNew" class="text-green-500 text-sm">(Baru)</span>
-              <span *ngIf="option.description" class="text-gray-500 text-sm"> - {{ option.description }}</span>
+              @if (option?.isNew) {
+                <span  class="text-green-500 text-sm">(Baru)</span>
+              }
+
+              @if (option?.description) {
+                <span  class="text-gray-500 text-sm"> - {{ option.description }}</span>
+              }
+
             </label>
           </div>
         </div>
